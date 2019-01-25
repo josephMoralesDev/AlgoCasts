@@ -11,6 +11,27 @@
 // 4       5
 // Answer: [1, 3, 2]
 
-function levelWidth(root) {}
+
+// 2 - counter
+//[ m]
+// 5 - temp
+//[1, 3]
+
+function levelWidth(root) {
+  let que = [root, 'm'];
+  let result = [0];
+  while (que.length > 1) {
+    let temp = que.shift();
+    if (temp === 'm') {
+      result.push(0);
+      que.push(temp);
+    } else {
+      que.push(...temp.children);
+      result[result.length - 1]++;
+    }
+  }
+
+  return result;
+}
 
 module.exports = levelWidth;

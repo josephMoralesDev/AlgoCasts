@@ -8,6 +8,36 @@
 // Example:
 //   fib(4) === 3
 
-function fib(n) {}
+// let fibMap = {};
+
+// function fib(n) {
+//   if (n === 0) {
+//     return 0
+//   }
+
+//   if (n === 1) {
+//     return 1;
+//   }
+
+//   if (fibMap[n]) {
+//     return fibMap[n];
+//   }
+
+//   fibMap[n] = fib(n - 1) + fib(n - 2);
+
+//   return fibMap[n];
+// }
+
+function fib(n) {
+  if (n === 0) {
+    return 0;
+  }
+
+  if (n === 1) {
+    return 1;
+  }
+
+  return fib(n - 1) + fib(n - 2);
+}
 
 module.exports = fib;

@@ -1,5 +1,11 @@
 const Node = require('./node');
-const validate = require('./index');
+const { validate } = require('./index');
+
+test('Validate recognizes a valid BST', () => {
+  const n = new Node(null);
+
+  expect(validate(n)).toEqual(false);
+});
 
 test('Validate recognizes a valid BST', () => {
   const n = new Node(10);
@@ -21,3 +27,5 @@ test('Validate recognizes an invalid BST', () => {
 
   expect(validate(n)).toEqual(false);
 });
+
+

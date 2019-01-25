@@ -22,8 +22,30 @@
 //    q.remove() // 2
 //    q.remove() // 'There'
 
+// while both que1 and que2 dont equal undefined perform some operation
+// if whatever q's peek does not equal undefined
+// add that value into new que
+
+
+
 const Queue = require('./queue');
 
-function weave(sourceOne, sourceTwo) {}
+function weave(sourceOne, sourceTwo) {
+  let queThree = new Queue();
+
+  while (sourceOne.peek() && sourceTwo.peek()) {
+    let newValue;
+    if (sourceOne.peek) {
+      newValue = sourceOne.remove();
+      queThree.add(newValue);
+    }
+    if (sourceTwo.peek) {
+      newValue = sourceTwo.remove();
+      queThree.add(newValue);
+    }
+  }
+
+  return queThree;
+}
 
 module.exports = weave;
